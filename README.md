@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ✈️ Flight Review Website
 
-## Getting Started
+A web application that allows users to review **specific airline flights** instead of general company reviews.
 
-First, run the development server:
+---
+
+## 📋 Project Overview
+
+- Traditional review platforms focus on airlines as a whole.
+- This project allows reviewing **specific flights** (e.g., Cairo ➔ Riyadh flight SV302), including:
+  - Staff service
+  - Food quality
+  - Cleanliness
+  - Takeoff & Landing experience
+- Each flight can have individual reviews with ratings and comments.
+
+---
+
+## 🛠️ Tech Stack
+
+| Area           | Technology                       |
+| -------------- | -------------------------------- |
+| Frontend       | Next.js 14 + Tailwind CSS        |
+| Backend        | Node.js + Express.js             |
+| Database       | MongoDB Atlas                    |
+| Authentication | JWT (Token-Based Authentication) |
+
+---
+
+## 🚀 How to Run the Project
+
+### Backend:
 
 ```bash
+cd server
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Backend server will start on: `http://localhost:5000`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Frontend:
 
-## Learn More
+```bash
+cd client
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Frontend server will start on: `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔐 Authentication Details
 
-## Deploy on Vercel
+- Users must **Register** and **Login** to access features like:
+  - Adding a flight review
+- JWT Token is stored in `localStorage`
+- Navbar dynamically changes based on authentication status.
+- Protected Routes implemented (example: Add Review page).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌟 Features
+
+- User registration and login.
+- Protected Add Review page (only accessible after login).
+- Dynamic Home Page showing flights list.
+- Flight Details page with:
+  - Flight information
+  - Animated ⭐️ stars for reviews
+  - Passenger comments
+- Toast notifications for actions (login, logout, review submission).
+- Responsive Design for desktop and mobile.
+
+---
+
+## 📸 (Optional Screenshots Section)
+
+> Could be added if needed before final delivery.
+
+---
+
+## 📚 Notes
+
+- Frontend and Backend are separated for better architecture.
+- Easy to scale with Admin features or flight management later.
+- Could add pagination or rating averages in future versions.
